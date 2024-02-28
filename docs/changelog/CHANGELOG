@@ -3,4 +3,5 @@ Changed stations.json with updated format
 changed train.py to perform even more function
 Wed Feb 28 11:58:30
 Added pnr.py for pnr status check
-
+Wed Feb 28 17:19:31
+Fixing minor bugs

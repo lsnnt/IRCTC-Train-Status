@@ -1,7 +1,7 @@
 # get pnr status
 import requests
 
-pnrno = input("input the pnr number:")
+# pnrno = input("input the pnr number:")
 # pnrno = 2638967619 # for testing
 def getpnrdetails(pnrno):
     cookies = {
