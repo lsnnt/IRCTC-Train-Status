@@ -1,6 +1,7 @@
 import requests
 import datetime
 import json
+from pnr import getpnrdetails
 class Train:
     def __init__(self, train_no='12954', date=datetime.datetime.now().strftime("%d-%m-%Y")):
         self.train_no = train_no
@@ -32,7 +33,9 @@ def main():
     1. Source Station current station next station destination station
     2. Train will come on which platform
     3. Print Delay info
-    4. Full json response
+    4. Get PNR details
+    5. Full json response
+    Enter the number:
 > '''
     inputnumber = input(inputno)
     if inputnumber == '1':
@@ -66,6 +69,9 @@ def main():
     elif inputnumber == '3':
         print(gettraindelayinfo(stations, train))
     elif inputnumber == '4':
+        pnrno = input("input the pnr number:")
+        print(getpnrdetails(pnrno))
+    elif inputnumber == '5':
         print(train.gettrainlivestatus())
 if __name__ == "__main__":
     main()
