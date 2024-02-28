@@ -1,6 +1,6 @@
 # For Linux
 ```
-# no need for documentation
+Open pr 
 ```
 # For Termux
 ```
