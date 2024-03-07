@@ -2,6 +2,25 @@ import requests
 import datetime
 import json
 from pnr import getpnrdetails
+LICENSE = """
+    Irctc-train-status
+    Copyright (C) 2024 NNT
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <https://www.gnu.org/licenses/>.
+    
+    Contact developer at https://t.me/cdnnt
+"""
 class Train:
     def __init__(self, train_no='12954', date=datetime.datetime.now().strftime("%d-%m-%Y")):
         self.train_no = train_no
@@ -21,6 +40,9 @@ def gettraindelayinfo(stations, train):
             return str(train.gettrainlivestatus()["days_schedule"][i-1]["delay_in_arrival"])+' minutes at station '+stations[train.gettrainlivestatus()["days_schedule"][i-1]["station_code"]]+" "+train.gettrainlivestatus()["days_schedule"][i-1]["station_code"]
     # return 'No delay info'
 def main():
+    print("-------------------------")
+    print(LICENSE)
+    print("-------------------------")
     tno = input('Enter the train number: ')
     date = input('Enter the date (dd-mm-yyyy) with dash or leave for today: ')
     if date == '':
